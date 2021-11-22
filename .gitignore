@@ -5,3 +5,9 @@ out
 simple_message.json
 simple_message.bin
 /.gradle/
+/.gradle/7.1/
+/.gradle/7.3/
+/.gradle/buildOutputCleanup/
+/.gradle/checksums/
+/.gradle/vcs-1/
+/.gradle/file-system.probe
