@@ -15,7 +15,7 @@ public class SimpleMainWriter {
         // Simple field
         builder.setId(42)
                 .setIsSimple(true)
-                .setName("My Simple Message Name");
+                .setName("My Simple Message Name, it's from writer");
 
         // repeated field
         builder.addSampleList(1)
