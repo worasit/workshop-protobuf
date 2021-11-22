@@ -4,3 +4,4 @@ out
 .gradle
 simple_message.json
 simple_message.bin
+/.gradle/
