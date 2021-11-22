@@ -1,11 +1,14 @@
 # Workshop - Protocol Buffer 101
+
 ### Prerequisite
+
 - Java 8
-- Protoc
+- [Protoc](https://github.com/google/protobuf-gradle-plugin)
 - Docker
 - Gradle
 
 ### Set up
+
 - Install protoc gradle plugin https://github.com/google/protobuf-gradle-plugin
 - Configure build.gradle
     ```kotlin
@@ -28,3 +31,5 @@
        }
     }
     ```
+- configure IntelliJ to build and compile proto files before running
+  ![gradle run](/Users/worasit.daimongkol/Repositories/learning/workshop-protobuf/docs/img/gradle_compile_proto.png)
