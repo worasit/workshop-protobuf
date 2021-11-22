@@ -6,10 +6,23 @@ message Building {
   int32 id = 1;
   string name = 2;
   Address address = 3;
+  repeated Room rooms = 4;
 }
 
 message Address {
   string district = 1;
   string address_line1 = 2;
   string address_line2 = 3;
+}
+
+message Room {
+  int32 id = 1;
+  string name = 2;
+  RoomType room_type = 3;
+}
+
+enum RoomType {
+  SINGLE_BED = 0;
+  DOUBLE_BED = 1;
+  TWIN_BED = 2;
 }

@@ -1,16 +1,19 @@
 package com.daimongkol.protobuf;
 
 import com.google.protobuf.util.JsonFormat;
+import example.complex.Complex;
 import example.complex.Complex.Building;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
+import static example.complex.Complex.*;
 import static example.complex.Complex.Address;
 
 @Slf4j
-public class ComplexMain {
+public class ComplexMainWriter {
     public static void main(String[] args) throws IOException {
         log.info("Start Complex Main");
         Building.Builder builder = Building.newBuilder();
@@ -20,9 +23,15 @@ public class ComplexMain {
                 .setDistrict("Ratchathewi")
                 .build();
 
+
         Building biyokeTower = builder.setId(1)
                 .setName("Biyoke Tower")
                 .setAddress(address)
+                .addAllRooms(
+                        Arrays.asList(
+                                createRoom(1, "Room A"),
+                                createRoom(2, "Room B")
+                        ))
                 .build();
 
         FileOutputStream fileOutputStream = new FileOutputStream("complex_message.bin");
@@ -31,5 +40,9 @@ public class ComplexMain {
         FileOutputStream outputJson = new FileOutputStream("complex_message.json");
         String jsonOutput = JsonFormat.printer().print(biyokeTower);
         outputJson.write(jsonOutput.getBytes());
+    }
+
+    private static Room createRoom(int roomId, String roomName) {
+        return Room.newBuilder().setId(roomId).setName(roomName).build();
     }
 }
