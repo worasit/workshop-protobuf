@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package example.complex;
+
+message Building {
+  int32 id = 1;
+  string name = 2;
+  Address address = 3;
+}
+
+message Address {
+  string district = 1;
+  string address_line1 = 2;
+  string address_line2 = 3;
+}
