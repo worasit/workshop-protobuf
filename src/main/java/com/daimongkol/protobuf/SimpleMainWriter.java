@@ -3,12 +3,11 @@ package com.daimongkol.protobuf;
 import com.google.protobuf.util.JsonFormat;
 import example.simple.Simple.SimpleMessage;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class SimpleMain {
+public class SimpleMainWriter {
     public static void main(String[] args) {
         System.out.println("Hello world!");
         SimpleMessage.Builder builder = SimpleMessage.newBuilder();
